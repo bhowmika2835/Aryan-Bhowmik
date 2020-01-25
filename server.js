@@ -18,8 +18,16 @@ app.get("/", function(request, response) {
   response.sendFile(__dirname + "/views/index.html");
 });
 
+app.get("/index", function(request, response) {
+  response.sendFile(__dirname + "/views/index.html");
+});
+
 app.get("/form", function(request, response) {
   response.sendFile(__dirname + "/views/form.html");
+});
+
+app.get("/about_me", function(request, response) {
+  response.sendFile(__dirname + "/views/about_me.html");
 });
 
 app.post('/submit-form', (req, res) => {
