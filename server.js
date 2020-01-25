@@ -3,6 +3,7 @@
 
 // init project
 const express = require("express");
+const fs = require("fs")
 const app = express();
 
 app.use(express.urlencoded());
@@ -39,32 +40,13 @@ app.post('/submit-form', (req, res) => {
   const owner_name = req.body.ownerNam
   const owner_num = req.body.ownerNum
   
-  writeFile("words.json", name, finished)
-  writeFile("words.json", species, finished)
-  writeFile("words.json", age, finished)
-  writeFile("words.json", gender, finished)
-  writeFile("words.json", location, finished)
-  writeFile("words.json", owner_name, finished)
-  writeFile("words.json", owner_num, finished)
-  
-  function finished(err){
-    console.log("All set.")
+  let currentJson = JSON.parse(fs.readFileSync('words.json', 'utf8'))
+  let animalJson = {
+    name: name,
+    species: species,
+    age: 
   }
   
-  console.log("Name: ")
-  console.log(name)
-  console.log("species: ")
-  console.log(species)
-  console.log("age: ")
-  console.log(age)
-  console.log("gender: ")
-  console.log(gender)
-  console.log("location: ")
-  console.log(location)
-  console.log("owner_name: ")
-  console.log(owner_name)
-  console.log("owner_number: ")
-  console.log(owner_num)
   
   res.end()
 })
