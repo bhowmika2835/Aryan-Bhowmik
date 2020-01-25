@@ -6,12 +6,12 @@
 }
 
 body {
-  font-family: helvetica, arial, sans-serif;
+  font-family: helvetica, , sans-serif;
   margin: 2em;
+  background-color:rgb(211, 250, 204);
 }
 
 h1 {
-  font-style: italic;
   color: rgb(7,55,0);
 }
 
@@ -38,7 +38,7 @@ input {
   margin-bottom: 10px;
   padding: 5px;
   width: 100%;
-  border: 1px solid lightgrey;
+  border: 1px solid black;
   border-radius: 3px;
   font-size: 16px;
 }
