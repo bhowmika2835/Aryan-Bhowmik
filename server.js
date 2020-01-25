@@ -41,11 +41,26 @@ app.post('/submit-form', (req, res) => {
   const owner_num = req.body.ownerNum
   
   let currentJson = JSON.parse(fs.readFileSync('words.json', 'utf8'))
+  
   let animalJson = {
     name: name,
     species: species,
-    age: 
+    age: age, 
+    gender: gender,
+    location: location,
+    owner_name: owner_name,
+    owner_num: owner_num
   }
+  
+  currentJson.animals.push(animalJson)
+  
+  console.log(currentJson)
+  
+  fs.writeFile('words.json', JSON.stringify(currentJson), 'utf8', (err) => {
+    if (err) throw err;
+    
+    console.log('it saved!')
+  })
   
   
   res.end()
