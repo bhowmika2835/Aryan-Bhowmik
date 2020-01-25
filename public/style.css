@@ -12,10 +12,10 @@ body {
 
 h1 {
   color: rgb(7,55,0);
-  font-weight:50
+  font-weight:250
 }
 
-.bold {
+h1.bold {
   font-weight: 4;
 }
 

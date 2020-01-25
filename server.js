@@ -23,8 +23,29 @@ app.get("/form", function(request, response) {
 });
 
 app.post('/submit-form', (req, res) => {
-  const username = req.body.username
-  console.log("Hello World")
+  const name = req.body.name
+  const species = req.body.species
+  const age = req.body.age
+  const gender = req.body.gender
+  const location = req.body.location
+  const owner_name = req.body.ownerNam
+  const owner_num = req.body.ownerNum
+  
+  console.log("Name: ")
+  console.log(name)
+  console.log("species: ")
+  console.log(species)
+  console.log("age: ")
+  console.log(age)
+  console.log("gender: ")
+  console.log(gender)
+  console.log("location: ")
+  console.log(location)
+  console.log("owner_name: ")
+  console.log(owner_name)
+  console.log("owner_number: ")
+  console.log(owner_num)
+  
   res.end()
 })
 
