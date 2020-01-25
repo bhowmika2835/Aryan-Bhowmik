@@ -15,7 +15,7 @@
     
       <p>Animal Information:</p>
       
-      <form>
+      <form method="POST" action="/submit-form">
         <input name="name" type="text" maxlength="100" placeholder="Name" aria-labelledby="submit-dream">
         <input name="species" type="text" maxlength="100" placeholder="Species" aria-labelledby="submit-dream">
         <input name="age" type="text" maxlength="100" placeholder="Age" aria-labelledby="submit-dream">
@@ -26,6 +26,11 @@
         
         <button type="submit" id="submit-dream">Submit Animal</button>
       </form>
+        
+      const express = require('express')
+      const app = express()
+
+      app.use(express.urlencoded())
       
       <section class="dreams">
         <ul id="dreams"></ul>

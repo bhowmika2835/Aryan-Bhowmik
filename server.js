@@ -20,6 +20,11 @@ app.get("/form", function(request, response) {
   response.sendFile(__dirname + "/views/form.html");
 });
 
+app.post('/formSubmit', function (req, res) {
+   const username = req.body.username
+  res.end()      
+})
+
 // listen for requests :)
 const listener = app.listen(process.env.PORT, function() {
   console.log("Your app is listening on port " + listener.address().port);
