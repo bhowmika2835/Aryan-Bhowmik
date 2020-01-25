@@ -6,17 +6,18 @@
 }
 
 body {
-  font-family: helvetica, , sans-serif;
+  font-family: helvetica, arial, sans-serif;
   margin: 2em;
   background-color:rgb(211, 250, 204);
 }
 
 h1 {
   color: rgb(7,55,0);
+  font-weight:500
 }
 
 .bold {
-  font-weight: bold;
+  font-weight: 4;
 }
 
 p {
