@@ -31,6 +31,18 @@ app.post('/submit-form', (req, res) => {
   const owner_name = req.body.ownerNam
   const owner_num = req.body.ownerNum
   
+  writeFile("words.json", name, finished)
+  writeFile("words.json", species, finished)
+  writeFile("words.json", age, finished)
+  writeFile("words.json", gender, finished)
+  writeFile("words.json", location, finished)
+  writeFile("words.json", owner_name, finished)
+  writeFile("words.json", owner_num, finished)
+  
+  function finished(err){
+    console.log("All set.")
+  }
+  
   console.log("Name: ")
   console.log(name)
   console.log("species: ")
