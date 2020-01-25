@@ -5,6 +5,8 @@
 const express = require("express");
 const app = express();
 
+app.use(express.urlencoded());
+
 // we've started you off with Express,
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
@@ -20,9 +22,10 @@ app.get("/form", function(request, response) {
   response.sendFile(__dirname + "/views/form.html");
 });
 
-app.post('/formSubmit', function (req, res) {
-   const username = req.body.username
-  res.end()      
+app.post('/submit-form', (req, res) => {
+  const username = req.body.username
+  console.log("Hello World")
+  res.end()
 })
 
 // listen for requests :)
