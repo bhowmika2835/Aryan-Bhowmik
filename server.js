@@ -16,7 +16,7 @@ app.get("/", function(request, response) {
   response.sendFile(__dirname + "/views/index.html");
 });
 
-app.get("/submit", function(request, response) {
+app.get("/form", function(request, response) {
   response.sendFile(__dirname + "/views/form.html");
 });
 
