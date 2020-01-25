@@ -10,7 +10,7 @@ body {
   margin: 2em;
   background-color:rgb(211, 250, 204);
 }
-img
+
 h1 {
   color: rgb(7,55,0);
   font-weight:500
@@ -69,4 +69,9 @@ footer {
   margin-top: 50px;
   padding-top: 25px;
   border-top: 1px solid lightgrey;
+}
+
+img{
+  height: 225px;
+  width:225px;
 }
