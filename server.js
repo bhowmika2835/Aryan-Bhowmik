@@ -25,23 +25,23 @@ app.use(express.static("public"));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function(request, response) {
-  response.sendFile(__dirname + "/views/index.html");
-});
-
-app.get("/index", function(request, response) {
-  response.sendFile(__dirname + "/views/home.ejs");
+  response.sendFile(__dirname + "/views/home/index.html");
 });
 
 app.get("/form", function(request, response) {
-  response.sendFile(__dirname + "/views/form.html");
+  response.sendFile(__dirname + "/views/form/index.html");
 });
 
 app.get("/about_me", function(request, response) {
-  response.sendFile(__dirname + "/views/about_me.html");
+  response.sendFile(__dirname + "/views/about_me/index.html");
 });
 app.get("/our_purpose", function(request, response) {
-  response.sendFile(__dirname + "/views/our_purpose.html");
+  response.sendFile(__dirname + "/views/our_purpose/index.html");
 });
+
+app.get("/matches", function(request, response) {
+  response.sendFile(__dirname + "/view/matchs/index.html")
+})
 
 app.post('/submit-form', (req, res) => {
   const name = req.body.name
