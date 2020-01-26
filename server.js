@@ -64,9 +64,9 @@ app.post("/submit-form", (req, res) => {
     owner_num: owner_num
   };
 
-  currentJson.animals.push(name);
+  currentJson.animals.push(animalJson);
 
-  //console.log(currentJson)
+  console.log(currentJson)
 
   fs.writeFile("words.json", JSON.stringify(currentJson), "utf8", err => {
     if (err) throw err;
