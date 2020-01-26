@@ -81,11 +81,11 @@
   <body>
     <h2>This is the home page</h2>
       <p>It's a test view</p>
-        <ul>
+        <ul id="here">
           <% animals.forEach((animal) => { %>
-          <% animals.forEach((animal) => { %>
-          <li><%= animal.name %></li>
-          <% }); %>
+            <% animals.forEach((animal) => { %>
+              <li><%= animal.name %></li>
+            <% }); %>
           <% }); %>
         </ul>
   </body>

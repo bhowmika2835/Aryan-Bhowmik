@@ -11,10 +11,7 @@ app.use(express.urlencoded());
 app.set('view engine', 'ejs');
 
 app.get('/home', (req, res) => {
-  let animals = [
-    { name: 'Alligator' },
-    { name: 'Crocodile' }
-  ];
+  let animals = getData()
   
   console.log(animals)
   res.render('home', { animals: animals });
