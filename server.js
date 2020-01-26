@@ -14,7 +14,6 @@ app.get('/home', (req, res) => {
   let animals = getData()
   
   console.log(animals)
-  
   res.render('home', { animals: animals });
 });
 
@@ -80,13 +79,13 @@ app.post('/submit-form', (req, res) => {
 })
 
 function getData(){
-  let currentJson = JSON.parse(fs.readFileSync('words.json', 'utf8'));
-  
   fs.readFile('words.json', (err) => {
     if (err) throw err;
     
     console.log('it saved!')
   })
+  
+  let currentJson = JSON.parse(fs.readFileSync('words.json', 'utf8'));
   
   return currentJson;
 }
