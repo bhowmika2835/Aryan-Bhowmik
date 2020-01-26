@@ -3,18 +3,18 @@
 
 // init project
 const express = require("express");
-const fs = require("fs")
+const fs = require("fs");
 const app = express();
 
 app.use(express.urlencoded());
 
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
 
-app.get('/home', (req, res) => {
-  let animals = getData()
-  
-  console.log(animals)
-  res.render('home', { animals: animals });
+app.get("/home", (req, res) => {
+  let animals = getData();
+
+  console.log(animals);
+  res.render("home", { animals: animals });
 });
 
 // we've started you off with Express,
@@ -40,54 +40,52 @@ app.get("/our_purpose", function(request, response) {
 });
 
 app.get("/matches", function(request, response) {
-  response.sendFile(__dirname + "/view/matchs/index.html")
-})
+  response.sendFile(__dirname + "/view/matchs/index.html");
+});
 
-app.post('/submit-form', (req, res) => {
-  const name = req.body.name
-  const species = req.body.species
-  const age = req.body.age
-  const gender = req.body.gender
-  const location = req.body.location
-  const owner_name = req.body.ownerNam
-  const owner_num = req.body.ownerNum
-  
-  let currentJson = JSON.parse(fs.readFileSync('words.json', 'utf8'))
-  
+app.post("/submit-form", (req, res) => {
+  const name = req.body.name;
+  const species = req.body.species;
+  const age = req.body.age;
+  const gender = req.body.gender;
+  const location = req.body.location;
+  const owner_name = req.body.ownerNam;
+  const owner_num = req.body.ownerNum;
+
+  let currentJson = JSON.parse(fs.readFileSync("words.json", "utf8"));
+
   let animalJson = {
     name: name,
     species: species,
-    age: age, 
+    age: age,
     gender: gender,
     location: location,
     owner_name: owner_name,
     owner_num: owner_num
-  }
-  
-  currentJson.animals.push(name)
-  
-  //console.log(currentJson)
-  
-  fs.writeFile('words.json', JSON.stringify(currentJson), 'utf8', (err) => {
-    if (err) throw err;
-    
-    console.log('it saved!')
-  })
-  
-  
-  
-  res.end()
-})
+  };
 
-function getData(){
-  fs.readFile('words.json', (err) => {
+  currentJson.animals.push(name);
+
+  //console.log(currentJson)
+
+  fs.writeFile("words.json", JSON.stringify(currentJson), "utf8", err => {
     if (err) throw err;
-    
-    console.log('it saved!')
-  })
-  
-  let currentJson = JSON.parse(fs.readFileSync('words.json', 'utf8'));
-  
+
+    console.log("it saved!");
+  });
+
+  res.end();
+});
+
+function getData() {
+  fs.readFile("words.json", err => {
+    if (err) throw err;
+
+    console.log("it saved!");
+  });
+
+  let currentJson = JSON.parse(fs.readFileSync("words.json", "utf8"));
+
   return currentJson;
 }
 
