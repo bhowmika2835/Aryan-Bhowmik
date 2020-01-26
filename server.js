@@ -11,7 +11,10 @@ app.use(express.urlencoded());
 app.set('view engine', 'ejs');
 
 app.get('/home', (req, res) => {
-  let animals = getData()
+  let animals = [
+    { name: 'Alligator' },
+    { name: 'Crocodile' }
+  ];
   
   console.log(animals)
   res.render('home', { animals: animals });
@@ -74,7 +77,7 @@ app.post('/submit-form', (req, res) => {
     console.log('it saved!')
   })
   
-  response.sendFile(__dirname + "/views/home.ejs");
+  
   
   res.end()
 })
