@@ -8,6 +8,8 @@ const app = express();
 
 app.use(express.urlencoded());
 
+app.set('view engine', 'ejs');
+
 // we've started you off with Express,
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
@@ -17,10 +19,14 @@ app.use(express.static("public"));
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function(request, response) {
   response.sendFile(__dirname + "/views/index.html");
+  let animals = getData()
+  
+  res.render('home', { animals: animals });
 });
 
 app.get("/index", function(request, response) {
   response.sendFile(__dirname + "/views/index.html");
+  
 });
 
 app.get("/form", function(request, response) {
