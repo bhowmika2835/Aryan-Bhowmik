@@ -74,8 +74,9 @@ app.post("/submit-form", (req, res) => {
     console.log("it saved!");
   });
   
-  process.chdir(__dirname + "/views/matches")
-  document.location.href = __dirname + "/views/matches";
+  //process.chdir(__dirname + "/views/matches")
+  //document.location.href = __dirname + "/views/matches";
+  location.replace(__dirname + "/views/matches")
 
   res.end();
 });
