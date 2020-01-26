@@ -5,7 +5,8 @@
 }
 h1 {text-align:center;}
 li{text-allign:center;}
-p{text-allign:center;}
+h4{text-allign:center;}
+
 body {
   font-family: helvetica, arial, sans-serif;
   margin: 2em;
@@ -92,3 +93,4 @@ marquee{
   width: 500px;
   height: 350px;
 }
+

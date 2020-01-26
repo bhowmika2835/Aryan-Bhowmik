@@ -74,6 +74,8 @@ app.post('/submit-form', (req, res) => {
     console.log('it saved!')
   })
   
+  fs.process.report.directory = __dirname + "/views/home.ejs";
+  
   res.end()
 })
 
