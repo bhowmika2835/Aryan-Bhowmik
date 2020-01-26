@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 app.get('/home', (req, res) => {
   let animals = getData()
   
-  console.log(animals)
+  //console.log(animals)
   res.render('home', { animals: animals });
 });
 
@@ -66,14 +66,13 @@ app.post('/submit-form', (req, res) => {
   
   currentJson.animals.push(animalJson)
   
-  //console.log(currentJson)
+  console.log(currentJson)
   
   fs.writeFile('words.json', JSON.stringify(currentJson), 'utf8', (err) => {
     if (err) throw err;
     
     console.log('it saved!')
   })
-  
   
   res.end()
 })
