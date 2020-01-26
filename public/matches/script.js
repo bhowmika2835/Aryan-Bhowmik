@@ -3,11 +3,13 @@ $(document).ready(function() {
     type: "POST",
     url: "/getmatches",
     success: function(data) {
-      console.log(data);
       for(var i = 0; i < JSON.parse(data).animals.length; i++){
         console.log(JSON.parse(data).animals[i])
-        $("p").text("Hello world!");
       }
+      
+      var testNo = $("#test").text()
+
+      $("#test").text($(this).text());
     }
   });
 });
