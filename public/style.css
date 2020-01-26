@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 h1 {text-align:center;}
+li{text-allign:center;}
 body {
   font-family: helvetica, arial, sans-serif;
   margin: 2em;
@@ -73,7 +74,7 @@ footer {
 img{
   height: 400px;
   width:400px;
-
+  border-radius:30px;
 }
 
 img.center {

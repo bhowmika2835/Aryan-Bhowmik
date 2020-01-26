@@ -69,6 +69,12 @@ app.post('/submit-form', (req, res) => {
   res.end()
 })
 
+function getData(){
+  let currentJson = JSON.parse(fs.readFileSync('words.json', 'utf8'));
+  
+  return currentJson;
+}
+
 // listen for requests :)
 const listener = app.listen(process.env.PORT, function() {
   console.log("Your app is listening on port " + listener.address().port);
