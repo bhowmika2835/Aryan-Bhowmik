@@ -10,10 +10,12 @@ app.use(express.urlencoded());
 
 app.set('view engine', 'ejs');
 
-app.get('/index', (req, res) => {
+app.get('/home', (req, res) => {
   let animals = getData()
   
-  res.render('index', { animals: animals });
+  console.log(animals)
+  
+  //res.render('home', { animals: animals });
 });
 
 // we've started you off with Express,
@@ -24,11 +26,11 @@ app.use(express.static("public"));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function(request, response) {
-  response.sendFile(__dirname + "/views/index.ejs");
+  response.sendFile(__dirname + "/views/index.html");
 });
 
 app.get("/index", function(request, response) {
-  response.sendFile(__dirname + "/views/index.ejs");
+  response.sendFile(__dirname + "/views/home.ejs");
 });
 
 app.get("/form", function(request, response) {
@@ -65,7 +67,7 @@ app.post('/submit-form', (req, res) => {
   
   currentJson.animals.push(animalJson)
   
-  console.log(currentJson)
+  //console.log(currentJson)
   
   fs.writeFile('words.json', JSON.stringify(currentJson), 'utf8', (err) => {
     if (err) throw err;
