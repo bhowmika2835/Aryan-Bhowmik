@@ -67,13 +67,12 @@ app.post("/submit-form", (req, res) => {
   currentJson.animals.push(animalJson);
 
   console.log(currentJson)
-
-  fs.writeFile("words.json", JSON.stringify(currentJson), "utf8", err => {
+  console.log(JSON.stringify(currentJson));
+  
+  fs.writeFile("word.json", JSON.stringify(currentJson), "utf8", (err) => {
     if (err) throw err;
-  else {
         console.log("it saved!");
         
-  }
   });
   
   //process.chdir(__dirname + "/views/matches")
