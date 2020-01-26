@@ -3,12 +3,15 @@ $(document).ready(function() {
     type: "POST",
     url: "/getmatches",
     success: function(data) {
-      for (var i = 0; i < JSON.parse(data).animals.length; i++) {
-        console.log(JSON.parse(data).animals[i]);
-      }
+      let useableData = JSON.parse(data);
+      for (var i = 0; i < useableData.animals.length; i++) {
+        
+        console.log(useableData.animals[i].name);
+        console.log(useableData.animals[i].age)
+        $('#matches').append("<p>"+usableData.animals[i]+"</p>")
+      } 
       
-      var tempId = "foo";
-      $(tempId).text("some text");
+      
     }
   });
 });
