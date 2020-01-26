@@ -15,7 +15,7 @@ app.get('/home', (req, res) => {
   
   console.log(animals)
   
-  //res.render('home', { animals: animals });
+  res.render('home', { animals: animals });
 });
 
 // we've started you off with Express,
@@ -81,6 +81,12 @@ app.post('/submit-form', (req, res) => {
 
 function getData(){
   let currentJson = JSON.parse(fs.readFileSync('words.json', 'utf8'));
+  
+  fs.readFile('words.json', (err) => {
+    if (err) throw err;
+    
+    console.log('it saved!')
+  })
   
   return currentJson;
 }
