@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "firebase-tools": "^5.1.1"
+    "firebase-tools": "^5.1.1",
+    "ejs": "^3.0.1"
   },
   "engines": {
     "node": "10.x"

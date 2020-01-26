@@ -13,13 +13,7 @@ app.set('view engine', 'ejs');
 app.get('/index', (req, res) => {
   let animals = getData()
   
-  res.render('home', { animals: animals });
-});
-
-app.get('/', (req, res) => {
-  let animals = getData()
-  
-  res.render('home', { animals: animals });
+  res.render('index', { animals: animals });
 });
 
 // we've started you off with Express,
@@ -30,11 +24,11 @@ app.use(express.static("public"));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function(request, response) {
-  response.sendFile(__dirname + "/views/index.html");
+  response.sendFile(__dirname + "/views/index.ejs");
 });
 
 app.get("/index", function(request, response) {
-  response.sendFile(__dirname + "/views/index.html");
+  response.sendFile(__dirname + "/views/index.ejs");
 });
 
 app.get("/form", function(request, response) {
