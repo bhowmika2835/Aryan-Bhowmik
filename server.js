@@ -30,6 +30,9 @@ app.get("/form", function(request, response) {
 app.get("/about_me", function(request, response) {
   response.sendFile(__dirname + "/views/about_me.html");
 });
+app.get("/o", function(request, response) {
+  response.sendFile(__dirname + "/views/about_me.html");
+});
 
 app.post('/submit-form', (req, res) => {
   const name = req.body.name
