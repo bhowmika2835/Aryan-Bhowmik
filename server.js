@@ -77,17 +77,17 @@ app.post("/submit-form", (req, res) => {
   res.end();
 });
 
-app.post("/getmatches", (req, res) => {}) getData() {
+app.post("/getmatches", (req, res) => {
   fs.readFile("words.json", err => {
     if (err) throw err;
 
-    console.log("it saved!");
+    console.log("it loaded!");
   });
 
-  let currentJson = JSON.parse(fs.readFileSync("words.json", "utf8"));
+  var currentJSON = fs.readFileSync("words.json", "utf8");
 
-  return currentJson;
-}
+  res.send(currentJSON);
+});
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, function() {
