@@ -70,8 +70,9 @@ app.post("/submit-form", (req, res) => {
 
   fs.writeFile("words.json", JSON.stringify(currentJson), "utf8", err => {
     if (err) throw err;
-
-    console.log("it saved!");
+  else {
+    
+  }
   });
   
   //process.chdir(__dirname + "/views/matches")
