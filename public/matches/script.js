@@ -6,9 +6,14 @@ $(document).ready(function() {
       let useableData = JSON.parse(data);
       for (var i = 0; i < useableData.animals.length; i++) {
         
-        console.log(useableData.animals[i].name);
-        console.log(useableData.animals[i].age)
-        $('#matches').append("<p>"+usableData.animals[i]+"</p>")
+        $('#matches').append("<p>"+ useableData.animals[i].name)
+        $('#matches').append("<p>"+ useableData.animals[i].species)
+        $('#matches').append("<p>"+ useableData.animals[i].age)
+        $('#matches').append("<p>"+ useableData.animals[i].gender)
+        $('#matches').append("<p>"+ useableData.animals[i].location)
+        $('#matches').append("<p>"+ useableData.animals[i].owner_nam)
+        $('#matches').append("<p>"+ useableData.animals[i].owner_num)
+        $('#matches').append("<p>"+ "________________________________")
       } 
       
       
