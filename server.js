@@ -52,8 +52,11 @@ app.post("/submit-form", (req, res) => {
   const owner_name = req.body.ownerNam;
   const owner_num = req.body.ownerNum;
 
-  let currentJson = JSON.parse(fs.readFileSync("words.json", "utf8"));
-
+  //let currentJson = JSON.parse(fs.readFile("words.json", "utf8"));
+  fs.readFile("words.json","utf8", (err, data) => {
+  if (err) throw err;
+  console.log(data)
+  let currentJson = JSON.parse(data);
   let animalJson = {
     name: name,
     species: species,
@@ -66,19 +69,19 @@ app.post("/submit-form", (req, res) => {
 
   currentJson.animals.push(animalJson);
 
-  console.log(currentJson)
-  console.log(JSON.stringify(currentJson));
-  
-  fs.writeFile("word.json", JSON.stringify(currentJson), "utf8", (err) => {
+  fs.writeFile("words.json", JSON.stringify(currentJson), "utf8", (err) => {
     if (err) throw err;
         console.log("it saved!");
         
   });
+});
+
   
   //process.chdir(__dirname + "/views/matches")
   //document.location.href = __dirname + "/views/matches";
   location.replace(__dirname + "/views/matches")
 
+  
   res.end();
 });
 
