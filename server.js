@@ -40,7 +40,7 @@ app.get("/our_purpose", function(request, response) {
 });
 
 app.get("/matches", function(request, response) {
-  response.sendFile(__dirname + "/view/matches/index.html")
+  response.sendFile(__dirname + "/view/matchs/index.html")
 })
 
 app.post('/submit-form', (req, res) => {
