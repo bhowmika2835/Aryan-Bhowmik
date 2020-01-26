@@ -40,7 +40,7 @@ app.get("/our_purpose", function(request, response) {
 });
 
 app.get("/matches", function(request, response) {
-  response.sendFile(__dirname + "/view/matches/index.html");
+  response.sendFile(__dirname + "/views/matches/index.html");
 });
 
 app.post("/submit-form", (req, res) => {
@@ -77,7 +77,7 @@ app.post("/submit-form", (req, res) => {
   res.end();
 });
 
-function getData() {
+app.post("/getmatches", (req, res) => {}) getData() {
   fs.readFile("words.json", err => {
     if (err) throw err;
 
