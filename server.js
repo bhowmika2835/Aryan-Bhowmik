@@ -81,7 +81,7 @@ app.post("/submit-form", (req, res) => {
   //document.location.href = __dirname + "/views/matches";
   location.replace(__dirname + "/views/matches")
 
-  
+  res.redirect("/matches")
   res.end();
 });
 
