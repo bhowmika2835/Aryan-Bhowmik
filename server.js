@@ -87,6 +87,7 @@ app.post("/getmatches", (req, res) => {
   var currentJSON = fs.readFileSync("words.json", "utf8");
 
   res.send(currentJSON);
+  res.end();
 });
 
 // listen for requests :)

@@ -1,9 +1,9 @@
-$(document).ready(function(){
+$(document).ready(function() {
   $.ajax({
-  type: "POST",
-  url: "/getmatches",
-  success: function(){
-    
-  },
-});
+    type: "POST",
+    url: "/getmatches",
+    success: function(data) {
+      console.log(data);
+    }
+  });
 });
