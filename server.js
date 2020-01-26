@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 app.get('/home', (req, res) => {
   let animals = getData()
   
-  //console.log(animals)
+  console.log(animals)
   res.render('home', { animals: animals });
 });
 
@@ -64,7 +64,7 @@ app.post('/submit-form', (req, res) => {
     owner_num: owner_num
   }
   
-  currentJson.animals.push(animalJson)
+  currentJson.animals.push(name)
   
   console.log(currentJson)
   
@@ -73,8 +73,6 @@ app.post('/submit-form', (req, res) => {
     
     console.log('it saved!')
   })
-  
-  fs.process.report.directory = __dirname + "/views/home.ejs";
   
   res.end()
 })
