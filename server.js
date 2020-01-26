@@ -44,13 +44,13 @@ app.get("/our_purpose", function(request, response) {
 });
 
 app.post('/submit-form', (req, res) => {
-  const name = req.body.name.toString()
-  const species = req.body.species.toString()
-  const age = req.body.age.toString()
-  const gender = req.body.gender.toString()
-  const location = req.body.location.toString()
-  const owner_name = req.body.ownerNam.toString()
-  const owner_num = req.body.ownerNum.toString()
+  const name = req.body.name
+  const species = req.body.species
+  const age = req.body.age
+  const gender = req.body.gender
+  const location = req.body.location
+  const owner_name = req.body.ownerNam
+  const owner_num = req.body.ownerNum
   
   let currentJson = JSON.parse(fs.readFileSync('words.json', 'utf8'))
   
@@ -66,13 +66,15 @@ app.post('/submit-form', (req, res) => {
   
   currentJson.animals.push(name)
   
-  console.log(currentJson)
+  //console.log(currentJson)
   
   fs.writeFile('words.json', JSON.stringify(currentJson), 'utf8', (err) => {
     if (err) throw err;
     
     console.log('it saved!')
   })
+  
+  response.sendFile(__dirname + "/views/home.ejs");
   
   res.end()
 })
